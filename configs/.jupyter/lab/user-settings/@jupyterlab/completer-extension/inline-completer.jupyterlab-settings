@@ -1,0 +1,13 @@
+{
+    "showWidget": "always",
+    "showShortcuts": true,
+    "providers": {
+        "@jupyterlab/inline-completer:history": {
+            "enabled": true,
+            "timeout": 5000,
+            "debouncerDelay": 0,
+            "maxSuggestions": 100
+        }
+    },
+    "streamingAnimation": "uncover"
+}

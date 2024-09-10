@@ -1,0 +1,14 @@
+{
+    "editorConfig": {
+        "indentUnit": "2",
+        "tabSize": 2,
+        "customStyles": {
+            "fontFamily": "JetBrainsMono Nerd Font",
+            "fontSize": 16,
+            "lineHeight": null
+        },
+        "theme": "codemirror"
+    },
+    "scrollPastEnd": true,
+    "toolbar": []
+}

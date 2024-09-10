@@ -1,0 +1,10 @@
+{
+    "interactionMode": "notebook",
+    "showAllKernelActivity": false,
+    "promptCellConfig": {
+        "autoClosingBrackets": true,
+        "indentUnit": "2",
+        "lineNumbers": false,
+        "tabSize": 2
+    }
+}

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+tmux new-session "ide"
+tmux new-window
+tmux send-keys 'nvim .' C-m
+if [ -d .git ]; then
+    tmux new-window
+    tmux send-keys 'lazygit' C-m
+    tmux selectw -t 1
+fi;
+tmux a -t "ide" 

@@ -1,0 +1,8 @@
+{
+    "defaultConfig": {
+        "autoClosingBrackets": true,
+        "codeFolding": true,
+        "indentUnit": "2",
+        "tabSize": 2
+    }
+}

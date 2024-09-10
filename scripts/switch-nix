@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+nix shell nixpkgs#home-manager --command sh -c "\
+  home-manager switch --flake $HOME/nixdotfiles#tushya
+"

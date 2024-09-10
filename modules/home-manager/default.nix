@@ -19,7 +19,7 @@
     mysql
     ripgrep
     thefuck
-    mpv
+    # mpv
     neovim
     gcc
     luarocks

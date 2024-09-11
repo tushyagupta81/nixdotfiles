@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 case "$(uname -a)" in
-  Darwin*)  machine="osx" ;; 
+  Darwin*)  machine="darwin" ;; 
   Linux*)   machine="linux" ;;
   Bsd*)     machine="bsd" ;;
   Msys*)    machine="windows" ;;

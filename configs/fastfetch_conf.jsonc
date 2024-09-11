@@ -52,5 +52,8 @@
       "format": "{name}"
     },
     "memory",
+    "physicalmemory",
+    "swap",
+    "disk",
   ]
 }

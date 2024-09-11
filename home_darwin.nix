@@ -31,5 +31,5 @@
   xdg.enable = true;
   programs.fish.enable = true;
   programs.home-manager.enable = true;
-  imports = [./modules/home-manager];
+  imports = [./modules/home-manager ./modules/home-manager/darwin.nix];
 }

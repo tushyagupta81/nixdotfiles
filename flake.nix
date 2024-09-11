@@ -10,20 +10,26 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
-      homeConfigurations."tushya" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+  outputs = { nixpkgs, home-manager, ... }: {
+    homeConfigurations."tushya-linux" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [ ./home.nix ];
+      # Specify your home configuration modules here, for example,
+      # the path to your home.nix.
+      modules = [ ./home_linux.nix ];
 
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
-      };
+      # Optionally use extraSpecialArgs
+      # to pass through arguments to home.nix
     };
+    homeConfigurations."tushya-darwin" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+
+      # Specify your home configuration modules here, for example,
+      # the path to your home.nix.
+      modules = [ ./home_darwin.nix ];
+
+      # Optionally use extraSpecialArgs
+      # to pass through arguments to home.nix
+    };
+  };
 }

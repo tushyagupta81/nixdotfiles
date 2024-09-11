@@ -28,6 +28,9 @@
     fzf
     starship
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    flutter
+    android-tools
+    android-studio
   ];
   programs.git = {
     enable = true;

@@ -1,5 +1,26 @@
 #!/usr/bin/env bash
 
-nix shell nixpkgs#home-manager --command sh -c "\
-  home-manager switch --flake $HOME/nixdotfiles#tushya
-"
+case "$(uname -a)" in
+  Darwin*)  machine="osx" ;; 
+  Linux*)   machine="linux" ;;
+  Bsd*)     machine="bsd" ;;
+  Msys*)    machine="windows" ;;
+  Cygwin*)  machine="also windows" ;;
+  *)        machine="unknown" ;;
+esac
+
+if [ ${machine} == "linux" ]; then
+  export USER="tushya-linux"
+  nix shell nixpkgs#home-manager --command sh -c "\
+    home-manager switch --flake $HOME/nixdotfiles#tushya-linux
+  "
+  export USER="tushya"
+elif [ ${machine} == "darwin" ]; then
+  export USER="tushya-darwin"
+  nix shell nixpkgs#home-manager --command sh -c "\
+    home-manager switch --flake $HOME/nixdotfiles#tushya-darwin
+  "
+  export USER="tushya"
+else
+  echo "No known system $machine"
+fi

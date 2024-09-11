@@ -19,6 +19,10 @@
       ".wezterm.lua" = {
         source = ./.wezterm.lua;
       };
+      ".jupyter" = {
+        source = ./.jupyter;
+        recursive = true;
+      };
       # ".tmux.conf" = {
       #   source = ./.tmux.conf;
       # };

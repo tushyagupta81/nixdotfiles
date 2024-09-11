@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    darwin.xcode
-    cocoapods
+    # darwin.xcode
+    # cocoapods
   ];
 }
 

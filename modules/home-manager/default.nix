@@ -29,6 +29,7 @@
     starship
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     flutter
+    jq
   ];
   programs.git = {
     enable = true;

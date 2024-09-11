@@ -31,6 +31,7 @@
     flutter
     android-tools
     android-studio
+    android-studio-tools
   ];
   programs.git = {
     enable = true;

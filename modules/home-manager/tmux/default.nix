@@ -48,14 +48,14 @@ in {
             set -g @catppuccin_status_background "default"
           '';
         }
-        {
-          plugin = tmuxPlugins.continuum;
-          extraConfig = ''
-            set -g @continuum-restore 'on'
-            set -g @continuum-boot 'on'
-            set -g @continuum-save-interval '10'
-          '';
-        }
+        # {
+        #   plugin = tmuxPlugins.continuum;
+        #   extraConfig = ''
+        #     set -g @continuum-restore 'on'
+        #     set -g @continuum-boot 'on'
+        #     set -g @continuum-save-interval '10'
+        #   '';
+        # }
       ];
     extraConfig = ''
       unbind r

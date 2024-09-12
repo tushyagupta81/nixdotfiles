@@ -11,7 +11,7 @@ GREEN=0xff9ece6a
 YELLOW=0xffe0af68
 ORANGE=0xffff9e64
 RED=0xfff7768e
-BAR_COLOR=0x7f5db3
+BAR_COLOR=0xaf14161D
 COMMENT=0xff565f89
 
 # Tokyonight Day
@@ -35,7 +35,7 @@ LABEL_COLOR=$WHITE # Color of all labels
 ITEM_DIR="$HOME/.config/sketchybar/items"
 PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 
-FONT="MesloLGS NF"
+FONT="JetBrainsMono Nerd Font"
 
 PADDINGS=3
 
@@ -44,7 +44,7 @@ POPUP_CORNER_RADIUS=11
 POPUP_BACKGROUND_COLOR=0xff565f89
 POPUP_BORDER_COLOR=$COMMENT
 
-CORNER_RADIUS=15
+CORNER_RADIUS=10
 BORDER_WIDTH=2
 
 SHADOW=on

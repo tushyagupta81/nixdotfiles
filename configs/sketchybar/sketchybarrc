@@ -4,7 +4,7 @@ source "$HOME/.config/sketchybar/variables.sh" # Loads all defined colors
 
 # General bar and defaults
 
-sketchybar --bar height=30 \
+sketchybar --bar height=40 \
 	color="$BAR_COLOR" \
 	shadow="$SHADOW" \
 	position=top \
@@ -12,8 +12,8 @@ sketchybar --bar height=30 \
 	padding_right=9 \
 	padding_left=9 \
 	corner_radius="$CORNER_RADIUS" \
-	y_offset=5 \
-	margin=5 \
+	y_offset=0 \
+	margin=0 \
 	blur_radius=20 \
 	notch_width=200 \
 	--default updates=when_shown \

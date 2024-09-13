@@ -5,6 +5,7 @@ curl --proto '=https' --tlsv1.2 -sSf \
   | sh -s -- install
 
 . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+sudo chown -R "$USER" /nix
 
 $HOME/nixdotfiles/scripts/switch-nix
 

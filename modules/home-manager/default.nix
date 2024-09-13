@@ -35,6 +35,11 @@
     enable = true;
     userEmail = "tushyagupta81@gmail.com";
     userName = "Tushya Gupta";
+    extraConfig = {
+      pull = {
+        rebase = true;
+      };
+    };
   };
 }
 

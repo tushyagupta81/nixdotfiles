@@ -1,48 +1,121 @@
 return {
-	"echasnovski/mini.files",
-	version = false,
-	config = function()
-		require("mini.files").setup({
+	"nvim-neo-tree/neo-tree.nvim",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+		"MunifTanjim/nui.nvim",
+		-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+	},
+	opts = {
+		filesystem = {
+			window = {
+				mappings = {
+					["l"] = "open_nofocus",
+				},
+			},
+			commands = {
+				open_nofocus = function(state)
+					require("neo-tree.sources.filesystem.commands").open(state)
+					vim.schedule(function()
+						vim.cmd([[Neotree close]])
+					end)
+				end,
+			},
+			filtered_items = {
+				visible = true, -- This is what you want: If you set this to `true`, all "hide" just mean "dimmed out"
+				hide_dotfiles = false,
+				hide_gitignored = false,
+			},
+			follow_current_file = {
+				enabled = true,
+				leave_dirs_open = false,
+			},
+			hijack_netrw_behavior = "open_current",
+		},
+		buffers = {
+			follow_current_file = {
+				enabled = true, -- This will find and focus the file in the active buffer every time
+				--              -- the current file is changed while the tree is open.
+				leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+			},
+		},
+
+		-- If a user has a sources list it will replace this one.
+		-- Only sources listed here will be loaded.
+		-- You can also add an external source by adding it's name to this list.
+		-- The name used here must be the same name you would use in a require() call.
+		sources = {
+			"filesystem",
+			"git_status",
+			-- "document_symbols",
+		},
+		add_blank_line_at_top = false, -- Add a blank line at the top of the tree.
+		close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
+		source_selector = {
+			statusline = true, -- toggle to show selector on statusline
+		},
+		window = { -- see https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/popup for
+			-- possible options. These can also be functions that return these options.
+			position = "right", -- left, right, top, bottom, float, current
+			width = 35, -- applies to left and right positions
+			height = 15, -- applies to top and bottom positions
+			mapping_options = {
+				noremap = true,
+				nowait = true,
+			},
 			mappings = {
-				close = "q",
-				go_in = "l",
-				go_in_plus = "<CR>",
-				go_out = "h",
-				go_out_plus = "H",
-				reset = "<BS>",
-				reveal_cwd = "@",
-				show_help = "g?",
-				synchronize = "=",
-				trim_left = "<",
-				trim_right = ">",
+				["z"] = "close_all_nodes",
+				["Z"] = "expand_all_nodes",
 			},
-			windows = {
-				-- Maximum number of windows to show side by side
-				max_number = 3,
-				-- Whether to show preview of file/directory under cursor
-				preview = true,
-				-- Width of focused window
-				width_focus = 25,
-				-- Width of non-focused window
-				width_nofocus = 25,
-				-- Width of preview window
-				width_preview = 80,
-			},
-		})
-
-		require("plugins.utils.mini-files-git")
-
-		local MiniFiles = require("mini.files")
-		local minifiles_toggle = function()
-			if not MiniFiles.close() then
-				MiniFiles.open(vim.api.nvim_buf_get_name(0))
-				MiniFiles.reveal_cwd()
-			end
-		end
-
-		vim.keymap.set("n", "-", minifiles_toggle)
-	end,
+		},
+	},
+	vim.keymap.set("n", "-", "<cmd>Neotree filesystem toggle right<cr>"),
 }
+-- return {
+--   "echasnovski/mini.files",
+--   version = false,
+--   config = function()
+--     require("mini.files").setup({
+--       mappings = {
+--         close = "q",
+--         go_in = "l",
+--         go_in_plus = "<CR>",
+--         go_out = "h",
+--         go_out_plus = "H",
+--         reset = "<BS>",
+--         reveal_cwd = "@",
+--         show_help = "g?",
+--         synchronize = "=",
+--         trim_left = "<",
+--         trim_right = ">",
+--       },
+--       windows = {
+--         -- Maximum number of windows to show side by side
+--         max_number = 3,
+--         -- Whether to show preview of file/directory under cursor
+--         preview = true,
+--         -- Width of focused window
+--         width_focus = 25,
+--         -- Width of non-focused window
+--         width_nofocus = 25,
+--         -- Width of preview window
+--         width_preview = 80,
+--       },
+--     })
+--
+--     require("plugins.utils.mini-files-git")
+--
+--     local MiniFiles = require("mini.files")
+--     local minifiles_toggle = function()
+--       if not MiniFiles.close() then
+--         MiniFiles.open(vim.api.nvim_buf_get_name(0))
+--         MiniFiles.reveal_cwd()
+--       end
+--     end
+--
+--     vim.keymap.set("n", "-", minifiles_toggle)
+--   end,
+-- }
 
 -- return {
 -- 	"nvim-neo-tree/neo-tree.nvim",

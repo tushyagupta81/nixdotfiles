@@ -30,7 +30,7 @@ return {
 				enabled = true,
 				leave_dirs_open = false,
 			},
-			hijack_netrw_behavior = "open_current",
+			hijack_netrw_behavior = "open_default",
 		},
 		buffers = {
 			follow_current_file = {
@@ -69,7 +69,9 @@ return {
 			},
 		},
 	},
-	vim.keymap.set("n", "-", "<cmd>Neotree filesystem toggle right<cr>"),
+	config = function()
+		vim.keymap.set("n", "-", "<cmd>Neotree filesystem reveal right<cr>")
+	end,
 }
 -- return {
 --   "echasnovski/mini.files",

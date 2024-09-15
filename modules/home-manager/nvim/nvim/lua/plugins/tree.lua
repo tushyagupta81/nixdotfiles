@@ -6,70 +6,70 @@ return {
 		"MunifTanjim/nui.nvim",
 		-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 	},
-	opts = {
-		filesystem = {
-			window = {
-				mappings = {
-					["l"] = "open_nofocus",
+	config = function()
+		require("neo-tree").setup({
+			filesystem = {
+				-- window = {
+				-- 	mappings = {
+				-- 		["l"] = "open_nofocus",
+				-- 	},
+				-- },
+				-- commands = {
+				-- 	open_nofocus = function(state)
+				-- 		require("neo-tree.sources.filesystem.commands").open(state)
+				-- 		vim.schedule(function()
+				-- 			vim.cmd([[Neotree close]])
+				-- 		end)
+				-- 	end,
+				-- },
+				filtered_items = {
+					visible = true, -- This is what you want: If you set this to `true`, all "hide" just mean "dimmed out"
+					hide_dotfiles = false,
+					hide_gitignored = false,
+				},
+				follow_current_file = {
+					enabled = true,
+					leave_dirs_open = false,
+				},
+				hijack_netrw_behavior = "open_default",
+			},
+			buffers = {
+				follow_current_file = {
+					enabled = true, -- This will find and focus the file in the active buffer every time
+					--              -- the current file is changed while the tree is open.
+					leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
 				},
 			},
-			commands = {
-				open_nofocus = function(state)
-					require("neo-tree.sources.filesystem.commands").open(state)
-					vim.schedule(function()
-						vim.cmd([[Neotree close]])
-					end)
-				end,
-			},
-			filtered_items = {
-				visible = true, -- This is what you want: If you set this to `true`, all "hide" just mean "dimmed out"
-				hide_dotfiles = false,
-				hide_gitignored = false,
-			},
-			follow_current_file = {
-				enabled = true,
-				leave_dirs_open = false,
-			},
-			hijack_netrw_behavior = "open_default",
-		},
-		buffers = {
-			follow_current_file = {
-				enabled = true, -- This will find and focus the file in the active buffer every time
-				--              -- the current file is changed while the tree is open.
-				leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
-			},
-		},
 
-		-- If a user has a sources list it will replace this one.
-		-- Only sources listed here will be loaded.
-		-- You can also add an external source by adding it's name to this list.
-		-- The name used here must be the same name you would use in a require() call.
-		sources = {
-			"filesystem",
-			"git_status",
-			-- "document_symbols",
-		},
-		add_blank_line_at_top = false, -- Add a blank line at the top of the tree.
-		close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
-		source_selector = {
-			statusline = true, -- toggle to show selector on statusline
-		},
-		window = { -- see https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/popup for
-			-- possible options. These can also be functions that return these options.
-			position = "right", -- left, right, top, bottom, float, current
-			width = 35, -- applies to left and right positions
-			height = 15, -- applies to top and bottom positions
-			mapping_options = {
-				noremap = true,
-				nowait = true,
+			-- If a user has a sources list it will replace this one.
+			-- Only sources listed here will be loaded.
+			-- You can also add an external source by adding it's name to this list.
+			-- The name used here must be the same name you would use in a require() call.
+			sources = {
+				"filesystem",
+				"git_status",
+				-- "document_symbols",
 			},
-			mappings = {
-				["z"] = "close_all_nodes",
-				["Z"] = "expand_all_nodes",
+			add_blank_line_at_top = false, -- Add a blank line at the top of the tree.
+			close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
+			source_selector = {
+				statusline = true, -- toggle to show selector on statusline
 			},
-		},
-	},
-	config = function()
+			window = { -- see https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/popup for
+				-- possible options. These can also be functions that return these options.
+				position = "right", -- left, right, top, bottom, float, current
+				width = 35, -- applies to left and right positions
+				height = 15, -- applies to top and bottom positions
+				mapping_options = {
+					noremap = true,
+					nowait = true,
+				},
+				mappings = {
+					["z"] = "close_all_nodes",
+					["Z"] = "expand_all_nodes",
+				},
+			},
+		})
 		vim.keymap.set("n", "-", "<cmd>Neotree filesystem reveal right<cr>")
 	end,
 }

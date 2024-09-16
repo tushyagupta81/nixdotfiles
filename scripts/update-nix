@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
-nix-channel --update
+cd ~/nixdotfiles
+nix flake update
+cd -
 $HOME/nixdotfiles/scripts/switch-nix

@@ -24,19 +24,19 @@
 -- 	end,
 -- }
 
--- return {
--- 	"scottmckendry/cyberdream.nvim",
--- 	lazy = false,
--- 	priority = 1000,
--- 	config = function()
--- 		require("cyberdream").setup({
--- 			-- Enable transparent background
--- 			transparent = true,
--- 			borderless_telescope = false,
--- 		})
--- 		vim.cmd("colorscheme cyberdream")
--- 	end,
--- }
+return {
+	"scottmckendry/cyberdream.nvim",
+	lazy = false,
+	priority = 1000,
+	config = function()
+		require("cyberdream").setup({
+			-- Enable transparent background
+			transparent = true,
+			borderless_telescope = false,
+		})
+		vim.cmd("colorscheme cyberdream")
+	end,
+}
 
 -- return {
 -- 	"diegoulloao/neofusion.nvim",
@@ -50,23 +50,23 @@
 -- 	end,
 -- }
 
-return {
-	"rebelot/kanagawa.nvim",
-	name = "kanagawa",
-	priority = 1000,
-	config = function()
-		require("kanagawa").setup({
-			transparent = true,
-			colors = {
-				theme = {
-					all = {
-						ui = {
-							bg_gutter = "none",
-						},
-					},
-				},
-			},
-		})
-		vim.cmd("colorscheme kanagawa-wave")
-	end,
-}
+-- return {
+-- 	"rebelot/kanagawa.nvim",
+-- 	name = "kanagawa",
+-- 	priority = 1000,
+-- 	config = function()
+-- 		require("kanagawa").setup({
+-- 			transparent = true,
+-- 			colors = {
+-- 				theme = {
+-- 					all = {
+-- 						ui = {
+-- 							bg_gutter = "none",
+-- 						},
+-- 					},
+-- 				},
+-- 			},
+-- 		})
+-- 		vim.cmd("colorscheme kanagawa-wave")
+-- 	end,
+-- }

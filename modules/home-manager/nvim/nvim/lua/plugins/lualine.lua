@@ -5,7 +5,7 @@ return {
 			local cyberdream = require("lualine.themes.cyberdream")
 			require("lualine").setup({
 				options = {
-					theme = "cyberdream",
+					theme = cyberdream,
 				},
 			})
 		else

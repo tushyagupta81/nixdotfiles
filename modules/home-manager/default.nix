@@ -2,6 +2,7 @@
   imports = [./tmux ./fish ./nvim];
   home.packages = with pkgs; [
     rustc
+    rustfmt
     cargo
     python3
     fish

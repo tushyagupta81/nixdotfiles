@@ -104,6 +104,7 @@ return {
 				"eslint",
 				"pyright",
 				"emmet_ls",
+				"bashls",
 				"tailwindcss",
 				-- "ast_grep",
 			},

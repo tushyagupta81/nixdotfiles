@@ -11,5 +11,5 @@ $HOME/nixdotfiles/scripts/switch-nix
 
 echo "Changing default shell to fish"
 echo "$(which fish)" | sudo tee -a /etc/shells >/dev/null
-# Set the Homebrew fish as default shell
+# Set the fish as default shell
 chsh -s "$(which fish)"

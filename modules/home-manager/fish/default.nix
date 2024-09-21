@@ -30,6 +30,8 @@ if test -e "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
   fenv source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 end
 
+source "$HOME/.config/fish/conf.d/plugin-nvm.fish.fish"
+
 set -gx FONT "JetBrainsMono Nerd Font"
 
 fenv source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh

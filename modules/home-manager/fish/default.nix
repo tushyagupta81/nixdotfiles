@@ -11,15 +11,6 @@
           sha256 = "4+k5rSoxkTtYFh/lEjhRkVYa2S4KEzJ/IJbyJl+rJjQ=";
         };
       }
-      {
-        name = "nvm.fish";
-        src = pkgs.fetchFromGitHub {
-          owner = "jorgebucaran";
-          repo = "nvm.fish";
-          rev = "a0892d0bb2304162d5faff561f030bb418cac34d";
-          sha256 = "sha256-GTEkCm+OtxMS3zJI5gnFvvObkrpepq1349/LcEPQRDo=";
-        };
-      }
     ];
     shellInit = ''
 # ~/.config/fish/config.fish
@@ -29,8 +20,6 @@ set fish_greeting
 if test -e "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
   fenv source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 end
-
-source "$HOME/.config/fish/conf.d/plugin-nvm.fish.fish"
 
 set -gx FONT "JetBrainsMono Nerd Font"
 

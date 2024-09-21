@@ -22,7 +22,6 @@ in {
           plugin = tmux-super-fingers;
           extraConfig = "set -g @super-fingers-key f";
         }
-        tmuxPlugins.better-mouse-mode
         {
           plugin = tmuxPlugins.catppuccin;
           extraConfig = '' 
@@ -58,9 +57,6 @@ in {
         # }
       ];
     extraConfig = ''
-      unbind r
-      bind r source-file ~/.tmux.conf
-      
       set -g mouse on
       
       set -g prefix C-s

@@ -15,7 +15,6 @@
     git
     newsboat
     nodejs_22
-    fnm
     btop
     mysql
     ripgrep

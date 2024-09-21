@@ -12,12 +12,12 @@
         };
       }
       {
-        name = "nvm";
+        name = "nvm.fish";
         src = pkgs.fetchFromGitHub {
           owner = "jorgebucaran";
           repo = "nvm.fish";
           rev = "a0892d0bb2304162d5faff561f030bb418cac34d";
-          sha256 = "4+k5rSoxkTtYFh/lEjhRkVYa2S4KEzJ/IJbyJl+rJjQ=";
+          sha256 = "";
         };
       }
     ];

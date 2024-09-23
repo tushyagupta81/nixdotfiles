@@ -12,9 +12,6 @@
         };
       }
     ];
-    interactiveShellInit = ''
-${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
-    '';
     shellInit = ''
 # ~/.config/fish/config.fish
 set fish_greeting

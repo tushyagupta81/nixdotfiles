@@ -16,7 +16,6 @@
     newsboat
     nodejs_22
     btop
-    mysql
     ripgrep
     thefuck
     # mpv
